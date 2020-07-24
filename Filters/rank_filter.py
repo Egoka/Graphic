@@ -28,4 +28,10 @@ def filter_rank(image):
                     del pixel, r, g, b, sum_color
             del h_min, w_min
             arr_pixels = sorted(arr_pixels, key=lambda point: (point[3], point[0], point[1], point[2]))
+            factor = 0
+            if math.fabs(arr_pixels[k][3] - center_pixel_sum) < math.fabs(arr_pixels[l][3] - center_pixel_sum):
+                factor = k
+            elif math.fabs(arr_pixels[k][3] - center_pixel_sum) >= math.fabs(arr_pixels[l][3] - center_pixel_sum):
+                factor = l
+            arr_pixels[factor].pop(3)
     return image

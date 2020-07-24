@@ -5,6 +5,10 @@ from Filters.median_filter import filter_median
 
 def start_filter():
     image = io.imread('Photo/Photo_1.png')
+    image_rank = filter_rank(image)
+    io.imsave('Photo/Filter_rank.png', image_rank)
+    image_median = filter_median(image)
+    io.imsave('Photo/Filter_median.png', image_median)
 
 
 if __name__ == '__main__':

@@ -17,6 +17,9 @@ def filter_median(image):
                     j += 1
                 i += 1
             arr_window = sorted(arr_window, key=lambda sum_elements: sum_elements[3])
+            arr_window[4].pop(3)
+            image[column][row] = arr_window[4]
+            arr_window.clear()
             row += 1
         column += 1
     return image

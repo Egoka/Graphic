@@ -7,6 +7,7 @@ def filter_median(image):
             while i != 2:
                 j = -1
                 while j != 2:
+                    sum_color, elements, pix = 0, 0, []
                     j += 1
                 i += 1
             row += 1

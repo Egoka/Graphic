@@ -16,5 +16,9 @@ def filter_rank(image):
         for w in range(border, size_image[1] - border):  # width
             for h_min in range(-border, border + 1):
                 for w_min in range(-border, border + 1):
+                    r, g, b = int(image[h + h_min][w + w_min][0]), \
+                              int(image[h + h_min][w + w_min][1]), \
+                              int(image[h + h_min][w + w_min][2])
+                    sum_color = (r + g + b)
             del h_min, w_min
     return image

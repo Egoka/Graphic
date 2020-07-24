@@ -1,6 +1,6 @@
 def filter_median(image):
     size_image = image.shape
-    column, row = 1, 1
+    column, row, arr_window = 1, 1, []
     while size_image[0] - 1 != column:
         while size_image[1] - 1 != row:
             i = -1
@@ -13,6 +13,7 @@ def filter_median(image):
                         pix.append(image[column + i][row + j][elements])
                         elements += 1
                     pix.append(sum_color)
+                    arr_window.append(pix)
                     j += 1
                 i += 1
             row += 1

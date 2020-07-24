@@ -16,6 +16,7 @@ def filter_median(image):
                     arr_window.append(pix)
                     j += 1
                 i += 1
+            arr_window = sorted(arr_window, key=lambda sum_elements: sum_elements[3])
             row += 1
         column += 1
     return image

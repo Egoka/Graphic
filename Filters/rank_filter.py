@@ -27,4 +27,5 @@ def filter_rank(image):
                     arr_pixels.append(pixel)
                     del pixel, r, g, b, sum_color
             del h_min, w_min
+            arr_pixels = sorted(arr_pixels, key=lambda point: (point[3], point[0], point[1], point[2]))
     return image

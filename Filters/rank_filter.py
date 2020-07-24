@@ -12,4 +12,9 @@ def filter_rank(image):
         k -= 1
     else: l = int((n_size ** 2) - k - 1)
     del k_factor, n_size
+    for h in range(border, size_image[0] - border):  # height
+        for w in range(border, size_image[1] - border):  # width
+            for h_min in range(-border, border + 1):
+                for w_min in range(-border, border + 1):
+            del h_min, w_min
     return image

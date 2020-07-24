@@ -14,7 +14,7 @@ def filter_rank(image):
     del k_factor, n_size
     for h in range(border, size_image[0] - border):  # height
         for w in range(border, size_image[1] - border):  # width
-            center_pixel_sum = 0
+            arr_pixels, center_pixel_sum = [], 0
             for h_min in range(-border, border + 1):
                 for w_min in range(-border, border + 1):
                     r, g, b = int(image[h + h_min][w + w_min][0]), \
@@ -24,5 +24,7 @@ def filter_rank(image):
                     if h_min == 0 and w_min == 0:
                         center_pixel_sum = sum_color
                     pixel = [r, g, b, sum_color]
+                    arr_pixels.append(pixel)
+                    del pixel, r, g, b, sum_color
             del h_min, w_min
     return image

@@ -34,4 +34,7 @@ def filter_rank(image):
             elif math.fabs(arr_pixels[k][3] - center_pixel_sum) >= math.fabs(arr_pixels[l][3] - center_pixel_sum):
                 factor = l
             arr_pixels[factor].pop(3)
+            if size_image[2] > 3: arr_pixels[factor].append(255)
+            image[h][w] = arr_pixels[factor]
+            arr_pixels.clear()
     return image
